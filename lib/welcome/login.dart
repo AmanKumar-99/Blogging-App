@@ -80,6 +80,9 @@ class _LoginState extends State<Login> {
                           content: Text(
                               'The email which you have entered is not valid email'),
                         );
+                      } else {
+                        // Here you can moved to further if all details are correct
+                        Navigator.pushNamed(context, '/home');
                       }
                     },
                   );

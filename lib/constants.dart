@@ -35,17 +35,21 @@ Decoration backgroundImage() {
 // Settiing Loading Buttons design
 
 Widget welcomeScreenButton({String name}) {
-  return CircleAvatar(
-    backgroundColor: Colors.yellowAccent[700],
-    radius: 80,
-    child: Text(
-      name.toUpperCase(),
-      style: TextStyle(
-        fontSize: 35,
-        fontFamily: 'Comic',
-        color: Colors.black,
+  return Card(
+    child: CircleAvatar(
+      backgroundColor: Colors.yellowAccent[700],
+      radius: 80,
+      child: Text(
+        name.toUpperCase(),
+        style: TextStyle(
+          fontSize: 35,
+          fontFamily: 'Comic',
+          color: Colors.black,
+        ),
       ),
     ),
+    elevation: 30,
+    shape: CircleBorder(),
   );
 }
 
@@ -71,5 +75,32 @@ InputDecoration inputField({String hint, @required String label, bool valid}) {
     errorBorder: UnderlineInputBorder(
       borderSide: BorderSide(color: Colors.orange),
     ),
+  );
+}
+
+// Get appbar
+AppBar getAppBar({List<Widget> actions}) {
+  return AppBar(
+    title: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'Blogging',
+          style: TextStyle(
+            fontFamily: 'Comic',
+            color: Colors.cyanAccent,
+          ),
+        ),
+        SizedBox(width: 8),
+        Text(
+          'App',
+          style: TextStyle(
+            color: Colors.greenAccent,
+            fontFamily: 'Comic',
+          ),
+        )
+      ],
+    ),
+    actions: actions,
   );
 }

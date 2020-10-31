@@ -113,9 +113,7 @@ class _RegisterState extends State<Register> {
                           content: Text(
                               'The email which you have entered is not valid email'),
                         );
-                      }
-
-                      if (_password.text != _password2.text) {
+                      } else if (_password.text != _password2.text) {
                         // Checks the password and confirm password are equal
                         showAlertDialog(
                           context: context,
@@ -124,6 +122,9 @@ class _RegisterState extends State<Register> {
                           content: Text(
                               'The password and its confirmation are not matching'),
                         );
+                      } else {
+                        // Here the further go after you filled your details correctly
+                        Navigator.pushNamed(context, '/home');
                       }
                     },
                   );
