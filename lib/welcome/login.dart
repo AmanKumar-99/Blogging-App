@@ -100,7 +100,9 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // Forgotten password
+                    },
                     child: Text(
                       'Forgotten Password',
                       style: TextStyle(
