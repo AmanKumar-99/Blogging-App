@@ -37,7 +37,9 @@ class _SettingsState extends State<Settings> {
             ),
           ),
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              //Delete your account through here
+            },
             child: ListTile(
               leading: FaIcon(FontAwesomeIcons.trash),
               title: Text(
