@@ -6,7 +6,7 @@ class About extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           body: Center(
-        child: ListView(
+        child: Column(
           children: [
             SizedBox(
               height:25,
@@ -14,61 +14,61 @@ class About extends StatelessWidget {
             Text(
               'This app is developed by : - ',
               style: TextStyle(
-                fontSize: 23,
+                fontSize: 20,
                 color:Theme.of(context).brightness==Brightness.dark?Colors.limeAccent[400]:Colors.deepOrange
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 10),
             CircleAvatar(
               backgroundImage: AssetImage('images/Aman.png'),
               radius: 87,
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 10),
             Text(
               'Aman Kumar',
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 20,
                 fontFamily: 'Comic',
               ),
             ),
             Text(
               'Phone:  +91943595XXXX',
               style: TextStyle(
-                fontSize: 17,
+                fontSize: 13,
               ),
             ),
             Text(
               'Email: aman.kumar_cs18@gla.ac.in',
               style: TextStyle(
-                fontSize: 17,
+                fontSize: 13,
               ),
             ),
-            SizedBox(height: 15,),
+            SizedBox(height: 10,),
             Divider(color:Colors.orange,thickness: 10,),
-            SizedBox(height: 28),
+            SizedBox(height: 10),
              CircleAvatar(
               backgroundImage: AssetImage('images/Ayurish.png'),
               radius: 87,
             ),
-            SizedBox(height:15),
+            SizedBox(height:10),
             Text(
               'Ayurish Chandana',
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 20,
                 fontFamily: 'Comic',
               ),
             ),
             Text(
               'Phone:  +91948456XXXX',
               style: TextStyle(
-                fontSize: 17,
+                fontSize: 13,
               ),
             ),
             Text(
               'Email: ayurish.chandna_cs18@gla.ac.in',
               style: TextStyle(
-                fontSize: 17,
+                fontSize: 13,
               ),
             ),
           ],

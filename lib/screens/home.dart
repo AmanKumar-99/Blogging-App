@@ -32,12 +32,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Blog"),
-        backgroundColor: Theme.of(context).primaryColor,
+        title: Text("Blogging App"),
+        
         centerTitle: true,
+        
       ),
       body: Container(
-        color: Colors.black87,
+        
         child: Column(
           children: <Widget>[
             Visibility(
@@ -95,7 +96,7 @@ class _HomePageState extends State<HomePage> {
           Icons.edit,
           color: Colors.white,
         ),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.deepPurple,
         tooltip: "add a post",
       ),
 
