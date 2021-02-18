@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bloggingapp/screens/mydrawer.dart';
+
 class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,14 +9,15 @@ class About extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height:25,
+              height: 25,
             ),
             Text(
               'This app is developed by : - ',
               style: TextStyle(
-                fontSize: 20,
-                color:Theme.of(context).brightness==Brightness.dark?Colors.limeAccent[400]:Colors.deepOrange
-              ),
+                  fontSize: 20,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.limeAccent[400]
+                      : Colors.deepOrange),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 10),
@@ -44,14 +45,19 @@ class About extends StatelessWidget {
                 fontSize: 13,
               ),
             ),
-            SizedBox(height: 10,),
-            Divider(color:Colors.orange,thickness: 10,),
+            SizedBox(
+              height: 10,
+            ),
+            Divider(
+              color: Colors.orange,
+              thickness: 10,
+            ),
             SizedBox(height: 10),
-             CircleAvatar(
+            CircleAvatar(
               backgroundImage: AssetImage('images/Ayurish.png'),
               radius: 87,
             ),
-            SizedBox(height:10),
+            SizedBox(height: 10),
             Text(
               'Ayurish Chandana',
               style: TextStyle(

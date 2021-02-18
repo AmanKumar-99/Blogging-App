@@ -1,7 +1,5 @@
-
 import 'package:bloggingapp/db/PostService.dart';
 import 'package:bloggingapp/models/post.dart';
-import 'package:bloggingapp/screens/home.dart';
 import 'package:flutter/material.dart';
 
 class AddPost extends StatefulWidget {
@@ -28,14 +26,13 @@ class _AddPostState extends State<AddPost> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   decoration: InputDecoration(
-                      labelText: "Post tilte",
-                      border: OutlineInputBorder()
-                  ),
+                      labelText: "Post tilte", border: OutlineInputBorder()),
                   onSaved: (val) => post.title = val,
-                  validator: (val){
-                    if(val.isEmpty ){
+                  // ignore: missing_return
+                  validator: (val) {
+                    if (val.isEmpty) {
                       return "title field cant be empty";
-                    }else if(val.length > 16){
+                    } else if (val.length > 16) {
                       return "title cannot have more than 16 characters ";
                     }
                   },
@@ -47,12 +44,11 @@ class _AddPostState extends State<AddPost> {
                   keyboardType: TextInputType.multiline,
                   maxLines: null,
                   decoration: InputDecoration(
-                      labelText: "Post body",
-                      border: OutlineInputBorder()
-                  ),
+                      labelText: "Post body", border: OutlineInputBorder()),
                   onSaved: (val) => post.body = val,
-                  validator: (val){
-                    if(val.isEmpty){
+                  // ignore: missing_return
+                  validator: (val) {
+                    if (val.isEmpty) {
                       return "body field cant be empty";
                     }
                   },
@@ -60,20 +56,25 @@ class _AddPostState extends State<AddPost> {
               ),
             ],
           )),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        insertPost();
-        Navigator.pop(context);
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          insertPost();
+          Navigator.pop(context);
 //        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
-      },
-        child: Icon(Icons.add, color: Colors.white,),
+        },
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
         backgroundColor: Colors.red,
-        tooltip: "add a post",),
+        tooltip: "add a post",
+      ),
     );
   }
 
   void insertPost() {
     final FormState form = formkey.currentState;
-    if(form.validate()){
+    if (form.validate()) {
       form.save();
       form.reset();
       post.date = DateTime.now().millisecondsSinceEpoch;
@@ -81,7 +82,4 @@ class _AddPostState extends State<AddPost> {
       postService.addPost();
     }
   }
-
-
-
 }
